@@ -1,0 +1,95 @@
+switch ("`uname -s`")
+   case 'SunOS':
+     alias ls 'ls -F'
+     breaksw
+   case 'Linux':
+     alias ls '/bin/ls -Fh --color=auto'
+     breaksw
+endsw
+
+setenv PATH /hosted/projects/prya/pyublx/bin:${PATH}
+
+alias ll 'ls -ltr'
+alias m  'less'
+alias cp 'cp -i'
+alias mv 'mv -i'
+alias diskuse 'du -sk *'
+alias largeFiles 'find . -type f -size +500000k -exec ls -lh {} \;'
+
+alias linux 'srlogin eu05lo04'
+alias linux04 'srlogin eu05lo04'
+alias linux05 'srlogin eu05lo05'
+alias linux06 'srlogin eu05lo06'
+alias linux07 'srlogin eu05lo07'
+alias linux08 'srlogin eu05lo08'
+alias linux09 'srlogin eu05lo09'
+alias linux10 'srlogin eu05lo10'
+alias linux11 'srlogin eu05lo11'
+
+
+alias linuxCork 'source /home/ndun/scripts/cshell/linuxCork.csh'
+alias lmViewer  'wish /home/ndun/scripts/tcl/lmViewer.tcl'
+
+alias licmat 'lmstat -c -a -f "MATLAB"'
+alias licads 'aglmtool &'
+alias python '/home/prya/usr/bin/python'
+alias livegraph 'python /home/prya/usr/scripts/livegraph.py'
+alias gvmi gvim
+alias st  '/home/prya/usr/bin/sublime_text'
+alias glast 'gvim `ls -Art| tail -n 1`'
+
+alias rtl 'cd $WORKSPACE/rtl/$BLKNAME; xtitle $BLKNAME\-rtl'
+alias scripts 'cd $WORKSPACE/scripts/$BLKNAME; xtitle $BLKNAME\-scripts'
+alias ncsim 'cd $WORKSPACE/ncsim/$BLKNAME; xtitle $BLKNAME\-ncsim'
+alias tb 'cd $WORKSPACE/tb/$BLKNAME; xtitle $BLKNAME\-tb'
+alias tc 'cd $WORKSPACE/tc/$BLKNAME; xtitle $BLKNAME\-tc'
+alias rtlc 'cd $WORKSPACE/rtlc/$BLKNAME; xtitle $BLKNAME\-rtlc'
+alias meta 'cd $WORKSPACE/meta/$BLKNAME; xtitle $BLKNAME\-meta'
+alias doc 'cd $WORKSPACE/doc/$BLKNAME; xtitle $BLKNAME\-doc'
+alias spyglass 'cd $WORKSPACE/spyglass/$BLKNAME; xtitle $BLKNAME\-spyglass'
+alias constraints 'cd $WORKSPACE/constraints/$BLKNAME; xtitle $BLKNAME\-constraints'
+alias onspin 'cd $WORKSPACE/onespin/$BLKNAME; xtitle $BLKNAME\-onespin'
+alias hal 'cd $WORKSPACE/hal/$BLKNAME; xtitle $BLKNAME\-onespin'
+alias code 'cd $WORKSPACE/code/$BLKNAME; xtitle $BLKNAME\-code'
+alias fw            'cd $WORKSPACE/tc/br_sw_top'
+
+alias matlab 'matlab -c ~/licenses/matlab_license.lic'
+alias zim 'cd /home/prya/usr/zim-0.65; ./zim.py'
+alias baretail 'ml wine; wine /home/prya/Download/baretail.exe '
+
+alias u 'cd ..'
+alias uu 'cd ../../'
+alias uuu 'cd ../../../'
+alias uuuu 'cd ../../../'
+alias uuuuu 'cd ../../../../'
+alias ll 'ls -artlsh'
+alias h 'history'
+alias givm 'gvim'
+alias gvim 'python /home/prya/usr/scripts/gv.py'
+alias srm '/home/prya/usr/scripts/srm.sh'
+alias l 'ls'
+alias m '~/usr/scripts/more.py'
+alias untar 'tar -vxf'
+alias xxfig '~/usr/scripts/xxfig.py'
+alias le '~/usr/scripts/local_edit.py'
+alias lcd '/home/prya/usr/scripts/cd.py; cd'
+alias mgrep 'grep -rn '
+alias t '/home/prya/usr/bin/todo.py'
+alias ti '/home/prya/usr/scripts/ti.py --no-color '
+
+alias which_config 'pm workspace -l $WORKSPACE_NAME | awk '\'' {print $4;} '\'';'
+
+set autolist
+set nobeep
+
+bindkey "\e[1~" beginning-of-line 
+bindkey "\e[7~" beginning-of-line 
+bindkey "\e[2~" overwrite-mode    
+bindkey "\e[3~" delete-char       
+bindkey "\e[4~" end-of-line       
+bindkey "\e[8~" end-of-line       
+
+if( -e .cshrc.local) then
+	source .cshrc.local
+endif	
+
