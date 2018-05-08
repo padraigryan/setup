@@ -1,0 +1,8 @@
+#!/usr/bin/tcsh
+
+rm /home/prya/.todo/todo.pkl
+
+/home/prya/usr/bin/python todo.py Description of Task One \#boring \#project
+/home/prya/usr/bin/python todo.py Description of Task Two \#boring \#rules @4th dec
+/home/prya/usr/bin/python todo.py Description of Task Three \#this \#project @tomorrow
+/home/prya/usr/bin/python todo.py 
